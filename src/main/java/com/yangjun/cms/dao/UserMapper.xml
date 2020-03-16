@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.yangjun.cms.dao.UserMapper">
+  	<select id="selects" resultType="user">
+  		select * from cms_user
+  		<where>
+  			<if test="username !=null and username!=''">
+  				and username like '${username}'
+  			</if>
+  			<if test="locked!=null and created!=''">
+  				and locked =#{locked}
+  			</if>
+  		</where>
+  		order by created desc
+  	</select>
+  	
+  	<update id="userupdate">
+  		update cms_user
+  		<trim suffix="where id=#{id}" prefix="set" suffixOverrides=",">
+  			<if test="locked !=null and locked!=''">
+  				locked =#{locked}
+  			</if>
+  		</trim>
+  	</update>
+  	
+  	<insert id="insert">
+  		insert into cms_user(username,password,gender,nickname,birthday,locked,created)
+  		values(#{username},#{password},#{gender},#{nickname},#{birthday},
+  		#{locked},#{created})
+  	</insert>
+  	
+  	<select id="selectByUsername" resultType="user">
+  		select * from cms_user where username=#{username}
+  	</select>
+  	
+  	<select id="login" resultType="user">
+  		select * from cms_user where username=#{username} and password=#{password}
+  	</select>
+  </mapper>
