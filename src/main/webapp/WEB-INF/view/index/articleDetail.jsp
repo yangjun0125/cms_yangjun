@@ -11,6 +11,8 @@
 <script type="text/javascript" src="/resource/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/resource/bootstrap.min.js"></script>
 <title>${article.title }</title>
+<meta name="keywords" content="${article.keywords }">
+<meta name="original" content="${article.original }">
 </head>
 <body>
 		<div class="table-fluid">
@@ -76,6 +78,16 @@
 		</div>
 	
 	<script type="text/javascript">
+	
+	
+	$(function(){
+		$.post("/openlog",{articleId:'${article.id }'},function(flag){
+			if(flag){
+				alert("访问加1");
+			}
+		})
+	})
+	
 	
 	function deleteCollect(){
 		

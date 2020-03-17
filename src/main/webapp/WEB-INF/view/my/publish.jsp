@@ -82,6 +82,14 @@
 		<div class="form-group">
 			文章标题图片：<input type="file" name="file" class="btn btn-link">
 		</div>
+		<div class="form-group">
+			<label for="keywords">关键字：</label> <input type="text" name="keywords"
+				class="form-control-md col-md-8" id="original">
+		</div>
+		<div class="form-group">
+			<label for="original">文章来源：</label> <input type="text" name="original"
+				class="form-control-md col-md-8" id="original">
+		</div>
 		<textarea name="content1" cols="100" rows="8"
 			style="width: 810px; height: 250px; visibility: hidden;"><%=htmlspecialchars(htmlData)%></textarea>
 		<br /> <input type="button" name="button" class="btn btn-success"

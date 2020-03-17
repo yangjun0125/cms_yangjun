@@ -148,5 +148,11 @@ public class IndexController {
 		collect.setCreated(new Date());
 		return collectService.insert(collect) > 0;
 	}
+	
+	@RequestMapping("openlog")
+	@ResponseBody
+	public boolean openlog(HttpSession session,Integer articleId) {
+		return articleService.openlog(articleId)>0;
+	}
 
 }

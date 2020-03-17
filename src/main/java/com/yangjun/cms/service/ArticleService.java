@@ -2,6 +2,7 @@ package com.yangjun.cms.service;
 
 import com.github.pagehelper.PageInfo;
 import com.yangjun.cms.entity.Article;
+import com.yangjun.cms.entity.User;
 
 public interface ArticleService {
 	/**
@@ -51,6 +52,15 @@ public interface ArticleService {
 	 * @return: int
 	 */
 	int update(Article article);
+
+	/** 
+	 * @Title: openlog 
+	 * @Description: TODO
+	 * @param articleId
+	 * @return
+	 * @return: boolean
+	 */
+	int openlog(Integer articleId);
 
 
 }

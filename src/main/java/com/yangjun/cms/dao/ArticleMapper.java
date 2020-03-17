@@ -3,6 +3,7 @@ package com.yangjun.cms.dao;
 import java.util.List;
 
 import com.yangjun.cms.entity.Article;
+import com.yangjun.cms.entity.User;
 
 public interface ArticleMapper {
 	/**
@@ -43,4 +44,14 @@ public interface ArticleMapper {
 	 * @return: int
 	 */
 	int update(Article article);
+
+
+	/** 
+	 * @Title: openlog 
+	 * @Description: TODO
+	 * @param articleId
+	 * @return
+	 * @return: int
+	 */
+	int openlog(Integer articleId);
 }

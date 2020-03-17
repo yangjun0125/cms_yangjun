@@ -10,6 +10,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yangjun.cms.dao.ArticleMapper;
 import com.yangjun.cms.entity.Article;
+import com.yangjun.cms.entity.User;
 import com.yangjun.cms.service.ArticleService;
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -68,6 +69,19 @@ public class ArticleServiceImpl implements ArticleService {
 	public int update(Article article) {
 		// TODO Auto-generated method stub
 		return articlemapper.update(article);
+	}
+
+	/* (non Javadoc) 
+	 * @Title: openlog
+	 * @Description: TODO
+	 * @param user
+	 * @return 
+	 * @see com.yangjun.cms.service.ArticleService#openlog(com.yangjun.cms.entity.User) 
+	 */
+	@Override
+	public int openlog(Integer articleId) {
+		// TODO Auto-generated method stub
+		return articlemapper.openlog(articleId);
 	}
 
 
